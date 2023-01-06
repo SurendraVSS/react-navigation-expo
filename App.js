@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from './screens/HomePage';
+import FloatingButton from './components/FloatingButton';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,12 +17,11 @@ export default function App() {
   const [showAnimation, setShowAnimation] = useState(false);
   return (
    <View
-   style={{ flex: 1, alignItems: 'center', justifyContent:'center'}}
+   style={{ flex: 1}}
    >
-      {showAnimation && <HomePage />}
-      <TouchableOpacity onPress={() => setShowAnimation(!showAnimation)}>
-      <Text>Show animation</Text>
-    </TouchableOpacity>
+ 
+
+      <FloatingButton />
     </View>
   );
 }
