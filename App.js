@@ -4,25 +4,22 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomePage from './screens/HomePage';
-import FloatingButton from './components/FloatingButton';
+import HomeScreens from './screens/HomeScreens';
+import Tab from './screens/Tab';
+import Drawer from './screens/Drawer';
 
 const Stack = createNativeStackNavigator();
 
 
-
-
-export default function App() {
-
-  const [showAnimation, setShowAnimation] = useState(false);
+export default function App() {  
   return (
-   <View
-   style={{ flex: 1}}
-   >
- 
-
-      <FloatingButton />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown:false}}>
+        <Stack.Screen name="Home" component={HomeScreens} />
+        <Stack.Screen name="Tab" component={Tab} />
+        <Stack.Screen name="Drawer" component={Drawer} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
